@@ -33,7 +33,6 @@ public class PessoaTest {
 	public void sexo_deve_ser_m_ou_f() throws Exception{
 		sut.setSexo("M");
 		
-		
 	}
 	
 
