@@ -25,4 +25,7 @@
   	</plugins>
   </build>
   
+  <modules>
+  	<module>entidades</module>
+  </modules>
 </project>
