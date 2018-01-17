@@ -1,0 +1,108 @@
+Teste de Vinculo Modal
+
+Basket
+- O contador da cesta esta contando errado com a abertura da modal
+- Quando feito o Download do pacote zip a Modal traz a tela branca.
+
+Caminho dos arquivos (Bradcrumb)
+- O Bradcrumb nao esta voltando para pasta inicial do processo
+
+No inspector elemento esta aparecendo o seguinte erro
+- 
+	Request URL:http://172.17.1.180/andersonrolim/cloud/web/app.php/dam/171384/simple?breadcrumb=1
+	Request Method:GET
+	Status Code:404 Not Found
+	Remote Address:172.17.1.180:80
+	Referrer Policy:no-referrer-when-downgrade
+
+
+Quando a imagem esta na basket e selecionamos ela para ser vinculada, o sistema apresenta esse erp no inspector elemento.
+- 
+	Request URL:http://172.17.1.180/andersonrolim/cloud/web/app.php/dam/linked/process
+	Request Method:POST
+	Status Code:500 Internal Server Error
+	Remote Address:172.17.1.180:80
+	Referrer Policy:no-referrer-when-downgrade
+
+
+Na selecao de arquivos a ser vinculado, pressione [ESC] e em seguida clicar fora da modal, quando clicado .
+- 
+	Request URL:http://172.17.1.180/andersonrolim/cloud/web/app.php/form/uploaddam/widget/simple/vinc
+	Request Method:POST
+	Status Code:500 Internal Server Error
+	Remote Address:172.17.1.180:80
+	Referrer Policy:no-referrer-when-downgrade
+
+
+
+
+- Contador da Basket esta aparecendo com diferencia de 1 (Simples/Multiplos)
+
+
+- Ao clicar na imagem que esta no favorito, o sistema apresenta tela em branco.
+
+- Paginacao - Quando na modal o sistema chega na ultima pagina, ao clicar na seta o sistema mostra pagina em branco.
+- Mudando a paginacao da modal, o sistema perde a referencia do contador de arquivos vinculado.
+Erro desconhecido (Upload Simples)
+- Passo
+	- Deve esta em Colecao com um arquivo ja selecionado
+		-	Fazer busca (.)
+		-   Mudar a quantidade de arquivo para 120
+		- 	Selecionar outro arquivo
+
+
+-
+Destination Path
+Upload Simples
+Upload Multiplos
+Selecao de Pasta Destino
+Marcacao de comentario
+Verificacao de arquivo Atual / Anteriores
+
+
+
+  
+
+-
+Na Basket, o botao do topo DESMARCAR [x], nao esta desmancando os arquivos.
+- Quando clicado nesse botao, o sistema desmarca, apos o refresh o sistema marca.
+
+- O botao download nao aparece quando marcamos a primeira vez, aparece apenas quando damos o refresh.
+
+- Nao esta baixando a mesma quantidade de arquivos selecionados
+ex: inseri na basket 11 arquivos.
+ - 5 arquivos em uma pasta [teste1] e 6 arquivos [teste2].
+ - Selecionados todos resultando em 11.  
+ Resultado = Ao baixar o sistema baixou 6 arquivos.
+
+
+
+
+
+------------------------------
+
+
+                                                                                                            Erro ao transferir para o servidor rj - Json invalid (%22Erro+ao+fazer+md5+no+arquivo+copiado%3A+md5sum%3A+2017%5C%2F12%5C%2F11%5C%2FHD%5C%2F657714_JINGLE+SIMPLESMENTE+NATAL%5Ct.MXF%3A+No+such+file+or+directory%5Cn+%7C+acaoId+%23165258%22)
+                                                                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
