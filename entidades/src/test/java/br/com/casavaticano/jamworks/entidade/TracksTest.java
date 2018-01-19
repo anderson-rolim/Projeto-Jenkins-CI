@@ -3,6 +3,7 @@ package br.com.casavaticano.jamworks.entidade;
 import org.easetech.easytest.annotation.DataLoader;
 import org.easetech.easytest.annotation.Param;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +21,8 @@ public class TracksTest {
 	private WebDriver navegador;
 	@Before
 	public void setUp() {
-		navegador = Web.createBrowserStack();
+		//navegador = Web.createBrowserStack();
+		 navegador = Web.createChrome();
 	}
 	
 	@Test
@@ -43,6 +45,11 @@ public class TracksTest {
 			.digiteUmTextoParaAutomacao(textoParaOProcesso)
 			.submeterFormulario();	
 		
+	}
+	
+	@After
+	public void tearDown() {
+		navegador.quit();
 	}
 
 }
