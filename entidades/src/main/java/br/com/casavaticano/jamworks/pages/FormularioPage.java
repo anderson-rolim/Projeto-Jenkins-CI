@@ -21,11 +21,13 @@ public class FormularioPage extends BasePage{
 	}
 
 	public FormularioPage digiteTitulo(String Titulo) {	
+		navegador.findElement(By.xpath("//*[@id=\"form_1_field_1037\"]")).clear();
 		navegador.findElement(By.xpath("//*[@id=\"form_1_field_1037\"]")).sendKeys(Titulo);	
 		return this;
 	}
 	
 	public FormularioPage digiteEmail(String Email) {
+		navegador.findElement(By.xpath("//*[@id=\"form_1_field_1036\"]")).clear();
 		navegador.findElement(By.xpath("//*[@id=\"form_1_field_1036\"]")).sendKeys(Email);
 		return this;
 	}
@@ -37,6 +39,7 @@ public class FormularioPage extends BasePage{
 	}
 	
 	public FormularioPage digiteUmTextoParaAutomacao(String TextoParaAutomacao) {
+		navegador.findElement(By.xpath("//*[@id=\"form_1_field_1039\"]")).clear();		
 		navegador.findElement(By.xpath("//*[@id=\"form_1_field_1039\"]")).sendKeys(TextoParaAutomacao);		
 		return this;
 	}
@@ -188,7 +191,7 @@ public class FormularioPage extends BasePage{
 		
 	public TracksPage submeterFormulario() {
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(1000);
 			navegador.findElement(By.xpath("//div[@class=\"form_row form-buttons\"]//div[@class=\"control-group\"]//button[@class=\"btn btn-base btn-big\"]")).click();	
 		} catch (InterruptedException e) {
 			e.printStackTrace();

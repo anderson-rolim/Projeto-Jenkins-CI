@@ -36,6 +36,7 @@ public class LoginPage extends BasePage{
 		digitarLogin(login);
 		digitarSenha(password);
 		clicarEntrar();
+
 		return new TracksPage(navegador);
 		
 		
