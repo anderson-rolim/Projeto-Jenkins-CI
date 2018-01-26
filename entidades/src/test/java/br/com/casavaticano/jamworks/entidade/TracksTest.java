@@ -167,26 +167,7 @@ public class TracksTest {
 				"×" + "\n" + "Processo cancelado com sucesso.");
 	}
 
-	// @Test
-	public void testAddUmProcessoPreenchidoNaPautaDoTracks(@Param(name = "login") String login,
-			@Param(name = "password") String password, @Param(name = "addInformacaoPeca") String addInformacaoPeca,
-			@Param(name = "titulo") String titulo, @Param(name = "email") String email,
-			@Param(name = "textoParaOProcesso") String textoParaOProcesso) {
-
-		new LoginPage(navegador).fazerLogin(login, password).irParaFormDePeca()
-				.addInformacaoNoFormularioDePeca(addInformacaoPeca).digiteTitulo(titulo).digiteEmail(email)
-				.selecioneUmRelacionamento().digiteUmTextoParaAutomacao(textoParaOProcesso).submeterFormulario();
-
-	}
-
-	@Test
-	public void testAddNoPedidoDeMaterialNoProcessoDaPautaDoTracks() {
-		new LoginPage(navegador).fazerLogin("automacao", "jamworks").irParaFormDePeca()
-				.addInformacaoNoFormularioDePeca("PedidoDeMaterial - Formulario de Teste para Automacao de Teste")
-				.digiteTitulo("Automacao de Teste").digiteEmail("anderson.rolim@casavaticano.com.br")
-				.digiteUmTextoParaAutomacao("Texto Qualquer para Automacao de Teste").widgetPedidoMaterial("Globo RS")
-				.selecioneUmRelacionamento().submeterFormulario();
-	}
+	
 
 	@Test
 	public void testAddNoWidgetDeTabelaNoProcessoDaPautaDoTracks() {
@@ -207,8 +188,32 @@ public class TracksTest {
 		Assert.assertEquals(navegador.findElement(By.cssSelector("div.alert.alert-success")).getText(),
 				"×" + "\n" + "Processo cancelado com sucesso.");
 	}
+
 	
-	@Test
+
+	//@Test
+	public void testAddNoPedidoDeMaterialNoProcessoDaPautaDoTracks() {
+		new LoginPage(navegador).fazerLogin("automacao", "jamworks").irParaFormDePeca()
+				.addInformacaoNoFormularioDePeca("PedidoDeMaterial - Formulario de Teste para Automacao de Teste")
+				.digiteTitulo("Automacao de Teste").digiteEmail("anderson.rolim@casavaticano.com.br")
+				.digiteUmTextoParaAutomacao("Texto Qualquer para Automacao de Teste").widgetPedidoMaterial("Globo RS")
+				.selecioneUmRelacionamento().submeterFormulario();
+	}
+
+	// @Test
+		public void testAddUmProcessoPreenchidoNaPautaDoTracks(@Param(name = "login") String login,
+				@Param(name = "password") String password, @Param(name = "addInformacaoPeca") String addInformacaoPeca,
+				@Param(name = "titulo") String titulo, @Param(name = "email") String email,
+				@Param(name = "textoParaOProcesso") String textoParaOProcesso) {
+
+			new LoginPage(navegador).fazerLogin(login, password).irParaFormDePeca()
+					.addInformacaoNoFormularioDePeca(addInformacaoPeca).digiteTitulo(titulo).digiteEmail(email)
+					.selecioneUmRelacionamento().digiteUmTextoParaAutomacao(textoParaOProcesso).submeterFormulario();
+
+		}
+		
+	
+	//@Test
 	public void testAddNoWidgetMaterialNoProcessoDaPautaDoTracks() {
 		new LoginPage(navegador).fazerLogin("automacao", "jamworks").irParaFormDePeca()
 				.addInformacaoNoFormularioDePeca("Formulario de Teste para Automacao de Teste")
