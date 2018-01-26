@@ -24,8 +24,8 @@ public class TracksTest {
 
 	@Before
 	public void setUp() {
-		// navegador = Web.createBrowserStack();
-		navegador = Web.createChrome();
+		 navegador = Web.createBrowserStack();
+		//navegador = Web.createChrome();
 	}
 
 	@Test
