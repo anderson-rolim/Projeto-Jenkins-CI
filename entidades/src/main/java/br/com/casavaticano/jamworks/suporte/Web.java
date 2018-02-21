@@ -39,11 +39,11 @@ public class Web {
 	public static WebDriver createBrowserStack() {
 		
 		DesiredCapabilities caps = new DesiredCapabilities();
-	    caps.setCapability("browser", "Chrome");
-	    caps.setCapability("browser_version", "62.0");
-	    caps.setCapability("os", "Windows");
-	    caps.setCapability("os_version", "7");
-	    caps.setCapability("resolution", "1280x1024");
+		caps.setCapability("browser", "Chrome");
+		caps.setCapability("browser_version", "62.0");
+		caps.setCapability("os", "OS X");
+		caps.setCapability("os_version", "Sierra");
+		caps.setCapability("resolution", "1280x960");
 	    
 	    WebDriver navegador = null;
 	    
