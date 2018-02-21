@@ -14,6 +14,7 @@ import br.com.casavaticano.jamworks.pages.LoginPage;
 import br.com.casavaticano.jamworks.suporte.Web;
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 @RunWith(DataDrivenTestRunner.class)
 // @DataLoader(filePaths = "testAdicionarUmProcessoNaPautaDoTracks.csv")
 // @DataLoader(filePaths = "TracksTest.csv")
@@ -24,8 +25,8 @@ public class TracksTest {
 
 	@Before
 	public void setUp() {
-		 //navegador = Web.createBrowserStack();
-		navegador = Web.createChrome();
+		 navegador = Web.createBrowserStack();
+		//navegador = Web.createChrome();
 	}
 
 	@Test
@@ -121,7 +122,7 @@ public class TracksTest {
 
 	@SuppressWarnings("deprecation")
 	@Test
-	public void testRemoverUmProcessoDaPautaDoTracks() {
+	public void testRemoverUmProcessoDaPautaDoTracks() throws InterruptedException {
 
 		new LoginPage(navegador).fazerLogin("automacao", "jamworks").fazerBuscaNaPautaDoTracks("Automacao de Teste")
 				.removerProcessoNaPautaDoTracks();
@@ -132,7 +133,7 @@ public class TracksTest {
 
 	@SuppressWarnings("deprecation")
 	@Test
-	public void testRenomearUmaPecaDoProcessoDaPautaDoTracks() {
+	public void testRenomearUmaPecaDoProcessoDaPautaDoTracks() throws InterruptedException {
 
 		new LoginPage(navegador).fazerLogin("automacao", "jamworks").fazerBuscaNaPautaDoTracks("Automacao de Teste")
 				.renomearAPecaDoProcessoNaPautaDoTracks();
@@ -158,7 +159,7 @@ public class TracksTest {
 
 	@SuppressWarnings("deprecation")
 	@Test
-	public void testRemoverUmProcessoDaPautaDoTracksDuplicado() {
+	public void testRemoverUmProcessoDaPautaDoTracksDuplicado() throws InterruptedException {
 
 		new LoginPage(navegador).fazerLogin("automacao", "jamworks").fazerBuscaNaPautaDoTracks("Automacao de Teste")
 				.removerProcessoNaPautaDoTracks();
@@ -180,7 +181,7 @@ public class TracksTest {
 
 	@SuppressWarnings("deprecation")
 	@Test
-	public void testRemoverUmProcessoDaPautaDoTracksQueFoiRenomeado() {
+	public void testRemoverUmProcessoDaPautaDoTracksQueFoiRenomeado() throws InterruptedException {
 
 		new LoginPage(navegador).fazerLogin("automacao", "jamworks").fazerBuscaNaPautaDoTracks("Automacao de Teste")
 				.removerProcessoNaPautaDoTracks();
@@ -222,6 +223,25 @@ public class TracksTest {
 
 	}
 
+	//Test
+	public void testProcessoCompletoDaPautaDoTracks() throws InterruptedException {
+		new LoginPage(navegador).fazerLogin("automacao", "jamworks")
+		.irParaFormDePeca()
+		.addInformacaoNoFormularioDePeca("Formulario de Teste para Automacao de Teste")
+		.digiteTitulo("Automacao de Teste")
+		.digiteEmail("anderson.rolim@casavaticano.com.br")
+		.widgetMaterial("100", "Revista ROLIM")
+		.selecioneUmRelacionamento()
+		.submeterFormulario()
+		.fazerBuscaNaPautaDoTracks("Formulario de Teste para Automacao de Teste")
+		.renomearAPecaDoProcessoNaPautaDoTracks()
+		.inserirComentarioNaPecaDoProcessoNaPautaDoTracks()
+		.duplicarProcesso()
+		.submeterFormulario()
+		.removerProcessoNaPautaDoTracks();
+
+	}
+	
 	@After
 	public void tearDown() {
 		navegador.quit();

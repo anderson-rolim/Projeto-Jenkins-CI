@@ -13,10 +13,13 @@ import br.com.casavaticano.jamworks.pages.TracksPage;
 import br.com.casavaticano.jamworks.suporte.Web;
 
 public class Web {
-	  public static final String USERNAME = "rolim1";
-	  public static final String AUTOMATE_KEY = "6NLzMNh281PqFk2q8geg";
-	  public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-
+	  //public static final String USERNAME = "rolim1";
+	  //public static final String AUTOMATE_KEY = "6NLzMNh281PqFk2q8geg";
+	  //public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+     
+	public static final String USERNAME = "andersoncavalcan1";
+	public static final String AUTOMATE_KEY = "y3FgVddx1zmEaAdxK5RE";
+	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 	private static WebDriver navegador;
 	
@@ -39,8 +42,8 @@ public class Web {
 	    caps.setCapability("browser", "Chrome");
 	    caps.setCapability("browser_version", "62.0");
 	    caps.setCapability("os", "Windows");
-	    caps.setCapability("os_version", "10");
-	    caps.setCapability("resolution", "1024x768");
+	    caps.setCapability("os_version", "7");
+	    caps.setCapability("resolution", "1280x1024");
 	    
 	    WebDriver navegador = null;
 	    

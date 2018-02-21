@@ -31,7 +31,7 @@ public class TracksPage extends BasePage {
 		return this;
 	}
 
-	public TracksPage removerProcessoNaPautaDoTracks() {
+	public TracksPage removerProcessoNaPautaDoTracks() throws InterruptedException {
 		JavascriptExecutor executor = (JavascriptExecutor) navegador;
 
 		WebElement remover = navegador.findElement(By.cssSelector("i.icon-remove"));
@@ -40,12 +40,13 @@ public class TracksPage extends BasePage {
 		remover = navegador.findElement(By.xpath("//div[@class=\"modal-body\"]//*[@id=\"comentario_texto\"]"));
 		remover.sendKeys("Exclusao do formulario duplicado");
 		remover = navegador.findElement(By.xpath("//button[@id=\"tracker_ations_cancel_process_save\"]"));
+		Thread.sleep(1000);
 		remover.click();
 
 		return this;
 	}
 
-	public TracksPage renomearAPecaDoProcessoNaPautaDoTracks() {
+	public TracksPage renomearAPecaDoProcessoNaPautaDoTracks() throws InterruptedException {
 		JavascriptExecutor executor = (JavascriptExecutor) navegador;
 
 		WebElement renomear = navegador.findElement(By.xpath("//a[@id=\"tracker_list_action_rename_peca_1\"]"));
@@ -54,6 +55,7 @@ public class TracksPage extends BasePage {
 		renomear = navegador.findElement(By.xpath("//input[@id=\"peca_name\"]"));
 		renomear.sendKeys("Automacao de Teste (Peca Renomeada)");
 		renomear = navegador.findElement(By.xpath("//button[@id=\"tracker_action_rename_submit\"]"));
+		Thread.sleep(1000);
 		renomear.click();
 
 		return this;
@@ -89,6 +91,23 @@ public class TracksPage extends BasePage {
 		return this;
 	}
 
+/*
+	public DAMPage acessandoPastaColecaoNoModuloDAM() {
+
+		//Acessando a pasta Colecao da Homologacao
+		//Acessando a pasta Colecao da Homologacao
+		WebElement PastaHomologacao = navegador.findElement(By.xpath("//div[@class='box-container-folder']//a[@href='http://homologacao.casavaticano.com.br/dam/1449459/1/40']//div[@class='thumb']"));
+		PastaHomologacao.click();	
+		WebElement PastaHomologacaoAgencia = navegador.findElement(By.xpath("//div[@class='box-container-folder']//a[@href='http://homologacao.casavaticano.com.br/dam/1449461/1/40']"));
+		PastaHomologacaoAgencia.click();	
+		WebElement PastaHomologacaoAgenciaColecao = navegador.findElement(By.xpath("//div[@class='box-container-folder']//a[@href='http://homologacao.casavaticano.com.br/dam/1449462/1/40']//div[@class='thumb']"));
+		PastaHomologacaoAgenciaColecao.click();				
+		
+		return new DAMPage(navegador);
+
+	}
+	
+*/	
 	public FormularioPage clicarNaAtividadeParaEditarFormulario() {
 
 		WebElement EdicaoForm = navegador.findElement(By.xpath("//*[@id=\"tracker_list_activity_1\"]"));
